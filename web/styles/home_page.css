@@ -1,0 +1,267 @@
+* {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color: grey;
+    font-size: medium; /* 保持整个header的默认字体大小 */
+    position: relative; /* 祖先元素 */
+}
+.header nav {
+    display: flex;
+    justify-content: space-between; /* 左右分开 */
+    align-items: center; /* 垂直居中 */
+    height: 39px; /* 设置导航栏高度 */
+}
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 使用Flexbox */
+    align-items: center; /* 垂直居中 */
+}
+.header nav ul.left-menu {
+    justify-content: flex-start; /* 左侧对齐 */
+}
+.header nav ul.right-menu {
+    justify-content: flex-end; /* 右侧对齐 */
+}
+.header nav ul li {
+    margin: 0 10px; /* 增加一些左右间距 */
+    text-align: left;
+    position: relative; /* 为伪元素定位 */
+    display: flex; /* 使用Flexbox */
+    align-items: center; /* 垂直居中 */
+}
+.header nav ul li:not(:last-child)::after {
+    content: ''; /* 伪元素内容为空 */
+    position: absolute;
+    right: -10px; /* 竖线位置 */
+    height: 100%; /* 竖线高度与父元素一致 */
+    width: 1px; /* 竖线宽度 */
+    background-color: black; /* 竖线颜色 */
+}
+.header nav ul li a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #000; /* 设置文字颜色 */
+    font-size: 13px; /* 缩小链接字体大小 */
+    display: flex; /* 使用Flexbox */
+    align-items: center; /* 垂直居中 */
+    position: relative; /* 为伪元素定位 */
+}
+.header nav ul li a i {
+    margin-right: 5px; /* 图标和文字之间的间距 */
+}
+.header nav ul li a:hover {
+    text-decoration: none; /* 去掉下划线 */
+    color: white; /* 设置文字颜色 */
+}
+/* Tooltip 样式，仅对home类生效 */
+.header nav ul li a.home::after {
+    content: attr(title); /* 使用title属性作为内容 */
+    position: absolute;
+    bottom: 150%; /* 向上偏移 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 12px; /* 注释文字大小 */
+    z-index: 1; /* 保证tooltip在最上层 */
+}
+.home:hover::after {
+    display: block;
+}
+/* 主界面 */
+.main {
+    position: relative;
+    margin: 20px;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.image-link img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* 动画效果 */
+}
+.image-link:hover img {
+    transform: scale(1.05); /* 悬停时放大1.05倍 */
+}
+.main {
+    position: relative;
+    margin: 20px;
+}
+.logo-search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* 水平居中 */
+    margin-bottom: 5px; /* 让出空间放置分割线 */
+}
+.image-link img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* 动画效果 */
+}
+.image-link:hover img {
+    transform: scale(1.05); /* 悬停时放大1.05倍 */
+}
+.search {
+    margin-left: 300px;
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中对齐 */
+}
+.search input {
+    margin-left: 5px;
+    left: 200px;
+    height: 50px; /* 设置输入框高度 */
+    width: 300px; /* 宽度300px */
+    box-sizing: border-box;
+    font-size: medium;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* 设置圆角 */
+    background-color: white; /* 设置背景颜色 */
+    padding: 0 20px; /* 添加内边距 */
+}
+.search input:focus {
+    outline: none;
+    border-color: coral;
+}
+.search button {
+    height: 40px; /* 按钮高度 */
+    width: 60px; /* 设置按钮宽度 */
+    font-size: medium;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px; /* 设置圆角 */
+    background-color: rgb(192, 106, 135);
+    color: black;
+    margin-left: 5px; /* 添加左边距 */
+}
+.search button:hover {
+    background-color: coral; /* 悬停时改变按钮颜色 */
+}
+.divider {
+    border-top: 1px solid #000; /* 线条样式 */
+    width: 100%; /* 占满整个容器宽度 */
+    margin-top: 5px; /* 与上方元素的间距 */
+}
+.page-control {
+    display: flex;
+    margin: 20px;
+}
+.left-chose {
+    width: 15%;
+    position: relative;
+    z-index: 1; /* 确保列表在上方 */
+}
+.left-chose ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(52, 41, 35, 0.4);
+}
+.left-chose li {
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+.left-chose li:hover {
+    background-color: coral;
+}
+.left-chose a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+.right-img {
+    flex: 3;
+    position: relative;
+    margin-left: 2px;
+}
+.container {
+    position: relative;
+    width: 940px;
+    height: 330px;
+}
+.container input {
+    position: absolute;
+    z-index: 23;
+    bottom: 10px;
+}
+#pic1 {
+    left: 48%;
+}
+#pic2 {
+    left: 50%;
+}
+#pic3 {
+    left: 52%;
+}
+.wrap img {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#pic1:checked ~ .wrap img:nth-of-type(1),
+#pic2:checked ~ .wrap img:nth-of-type(2),
+#pic3:checked ~ .wrap img:nth-of-type(3) {
+    opacity: 1;
+    animation: showImg linear 1s 1 0s normal;
+}
+@keyframes showImg {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+}
+.arrow:hover {
+    background-color: rgba(52, 41, 35, 0.7); /* 设置背景为灰黑色 */
+    border-radius: 4px; /* 使背景变为矩形 */
+}
+.arrow.left {
+    left: 40px;
+}
+.arrow.right {
+    right: 0.1px;
+}
+.arrow label {
+    display: none;
+}
+.arrow i {
+    font-size: 15px;
+}
+#pic1:checked ~ .left label:nth-of-type(3),
+#pic2:checked ~ .left label:nth-of-type(1),
+#pic3:checked ~ .left label:nth-of-type(2) {
+    display: block;
+}
+#pic1:checked ~ .right label:nth-of-type(2),
+#pic2:checked ~ .right label:nth-of-type(3),
+#pic3:checked ~ .right label:nth-of-type(1) {
+    display: block;
+}
+
