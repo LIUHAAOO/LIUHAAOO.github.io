@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/login.css" />
+    <title>登录</title>
+</head>
+<body>
+<div class="container">
+    <form action="#" class="login-form">
+        <h2>登 录</h2>
+        <div class="input-container">
+            <input type="text" name="username" placeholder="用户名"/>
+        </div>
+        <div class="input-container password-container">
+            <input type="password" name="password" placeholder="密码" id="password"/>
+            <div class="conceal" id="conceal"></div>
+        </div>
+        <button type="submit">登录</button>
+    </form>
+    <div class="register-link">
+        <p>没有账号？<a href="../web/register.html">立即注册</a></p>
+    </div>
+</div>
+<script>
+    var password = document.getElementById('password');
+    var anniu = document.getElementById('conceal');
+    anniu.addEventListener('click', function(){
+        if(password.type === 'password'){
+            password.setAttribute('type', 'text');
+            anniu.classList.add('yincang');
+        } else {
+            password.setAttribute('type', 'password');
+            anniu.classList.remove('yincang');
+        }
+    });
+</script>
+</body>
+</html>
+
+
