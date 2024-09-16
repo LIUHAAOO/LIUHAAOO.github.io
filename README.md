@@ -1,4 +1,3 @@
-# Database-management-system
 这只是一个练手的东西，写的很烂，主要是css样式的练习
 ##### 7/13日更新内容
 增加了web的主页面的上面部分：
