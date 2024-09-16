@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商城</title>
+    <link rel="stylesheet" href="styles/home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="left-menu">
+                <li><a href="#" title="首页"> <i class="fas fa-home"></i></a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+
+            <ul class="right-menu">
+                <li><a href="../web/login.html">登入</a></li>
+                <li><a href="../web/register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="logo-search-container">
+            <a href class="image-link">
+                <img src="images/logo.png" class="logo"></img>
+            </a>
+            <div class="search">
+                <input type="text" placeholder="输入商品信息">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="page-control">
+            <div class="left-chose">
+                <ul>
+                    <li><a href="#">品种1</a></li>
+                    <li><a href="#">品种2</a></li>
+                    <li><a href="#">品种3</a></li>
+                    <li><a href="#">品种4</a></li>
+                    <li><a href="#">品种5</a></li>
+                    <li><a href="#">品种6</a></li>
+                    <li><a href="#">品种7</a></li>
+                </ul>
+            </div>
+            <div class="right-img">
+                <div class="container">
+                    <input type="radio" id="pic1" name="pic" checked />
+                    <input type="radio" id="pic2" name="pic" />
+                    <input type="radio" id="pic3" name="pic" />
+                    <div class="wrap">
+                         <img src="images/product3.png" alt="Product 1"/>
+                         <img src="images/product2.png" alt="Product 1"/>
+                         <img src="images/product1.jpg" alt="Product 1"/>
+                    </div>
+                    <div class="arrow left">
+                        <label for="pic1"><i class="fas fa-chevron-left"></i></label>
+                        <label for="pic2"><i class="fas fa-chevron-left"></i></label>
+                        <label for="pic3"><i class="fas fa-chevron-left"></i></label>
+                    </div>
+                    <div class="arrow right">
+                        <label for="pic1"><i class="fas fa-chevron-right"></i></label>
+                        <label for="pic2"><i class="fas fa-chevron-right"></i></label>
+                        <label for="pic3"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

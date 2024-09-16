@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/login.css" />
+    <title>注册</title>
+</head>
+<body>
+<div class="container">
+    <form action="#" class="login-form" id="register-form">
+        <h2>注 册</h2>
+        <div class="input-container">
+            <input type="text" name="username" placeholder="用户名" required/>
+        </div>
+        <div class="input-container">
+            <input type="password" name="password" placeholder="密码" id="password" required/>
+            <div class="conceal" id="conceal"></div>
+        </div>
+        <div class="input-container">
+            <input type="password" name="confirm-password" placeholder="确认密码" id="confirm-password" required/>
+            <div class="conceal" id="confirm-conceal"></div>
+        </div>
+        <button type="submit">注册</button>
+    </form>
+    <div class="register-link">
+        <p>已有账号？<a href="../web/login.html">立即登录</a></p>
+    </div>
+</div>
+<script>
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('confirm-password');
+    var conceal = document.getElementById('conceal');
+    var confirmConceal = document.getElementById('confirm-conceal');
+    var form = document.getElementById('register-form');
+
+    conceal.addEventListener('click', function(){
+        if(password.type === 'password'){
+            password.setAttribute('type', 'text');
+            conceal.classList.add('yincang');
+        } else {
+            password.setAttribute('type', 'password');
+            conceal.classList.remove('yincang');
+        }
+    });
+
+    confirmConceal.addEventListener('click', function(){
+        if(confirmPassword.type === 'password'){
+            confirmPassword.setAttribute('type', 'text');
+            confirmConceal.classList.add('yincang');
+        } else {
+            confirmPassword.setAttribute('type', 'password');
+            confirmConceal.classList.remove('yincang');
+        }
+    });
+
+    form.addEventListener('submit', function(event) {
+        if (password.value !== confirmPassword.value) {
+            alert('两次输入的密码不一致');
+            event.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>
